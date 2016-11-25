@@ -17,11 +17,16 @@ const russianRoulette = (req, res) => {
     Math.floor(Math.random() * errors.length)]('It blew up!');
 };
 
+//test
 
 app.use(morgan('common', {stream: logger.stream}));
 
 // for any GET request, we'll run our `russianRoulette` function
 app.get('*', russianRoulette);
+
+// YOUR MIDDLEWARE FUNCTION should be activated here using
+// `app.use()`. It needs to come BEFORE the `app.use` call
+// below, which sends a 500 and error message to the client
 
 app.use((err, req, res, next) => {
   logger.error(err);
