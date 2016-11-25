@@ -17,6 +17,7 @@ const russianRoulette = (req, res) => {
     Math.floor(Math.random() * errors.length)]('It blew up!');
 };
 
+//test
 
 app.use(morgan('common', {stream: logger.stream}));
 
